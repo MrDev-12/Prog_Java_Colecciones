@@ -4,7 +4,7 @@ package dam105t3_colecciones;
 import java.util.*;
 
 
-public class Dam105t3e101 {
+public class Dam105t3e102 {
 
     public static void main(String[] args) {
         
@@ -43,7 +43,7 @@ public class Dam105t3e101 {
 
                     if (parking.size() < maxParking) {
 
-                        parking.addFirst(matr);
+                        parking.push(matr);
 
                         System.out.println("La matricula se almacenó con éxito!");
 
@@ -70,9 +70,9 @@ public class Dam105t3e101 {
 
                     else {
 
-                        System.out.println("El coche con matricula " + parking.getFirst() + " se desaparcó con éxito!");
+                        System.out.println("El coche con matricula " + parking.peek() + " se desaparcó con éxito!");
                         
-                        parking.removeFirst();
+                        parking.poll();
 
                     }
                     
