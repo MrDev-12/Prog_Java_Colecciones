@@ -2,7 +2,7 @@ package dam105t3_colecciones;
 
 import java.util.*;
 
-public class Dam105t3e111 {
+public class Dam105t3e112 {
 
     static Scanner teclado;
     static Random random;
@@ -10,6 +10,9 @@ public class Dam105t3e111 {
     static LinkedList<Integer> cola;
     static int instanteSiguCliente;
     static int t;
+    
+    static int atendidos = 0;
+    static int noAtendidos = 0;
 
     //la cola contiene los minutos que va a requerir la atención del cajero
     //cuando le toque. Al primero de la cola se le va reduciendo en cada instante.
@@ -40,6 +43,8 @@ public class Dam105t3e111 {
                 if (cola.getFirst() == 0) {
 
                     cola.removeFirst();
+                    
+                    atendidos++;
 
                 }
 
@@ -57,7 +62,7 @@ public class Dam105t3e111 {
 
                 else {
 
-                    System.out.println("Un cliente se marchó sin comprar nada");
+                    noAtendidos++;
 
                 }
 
@@ -67,38 +72,17 @@ public class Dam105t3e111 {
 
             }
 
-            mostrarCola();
-
         }
+        
+        mostrarResultado();
         
     }
 
-    static void mostrarCola() {
+    static void mostrarResultado() {
 
-        System.out.print("Minuto: " + t);
+        System.out.println("Clientes Atendidos: " + atendidos);
 
-        System.out.println("(Sig.cli llegará en minuto:" + instanteSiguCliente + ")");
-
-        for (int i = 0; i < cola.size(); i++) {
-
-            System.out.printf("%02d", cola.get(i));
-
-            if (i == 0) {
-
-                System.out.println(" <<< Atendiendo (tiempo para terminar)");
-
-            }
-            
-            else {
-
-                System.out.println(" <<< Esperando (tiempo en caja cuando le toque)");
-
-            }
-
-        }
-
-        System.out.println("---------------\nPulsa");
-        teclado.nextLine();
+        System.out.println("Clientes no Atendidos: " + noAtendidos);
 
     }
 

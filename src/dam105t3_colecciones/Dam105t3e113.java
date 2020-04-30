@@ -2,7 +2,7 @@ package dam105t3_colecciones;
 
 import java.util.*;
 
-public class Dam105t3e112 {
+public class Dam105t3e113 {
 
     static Scanner teclado;
     static Random random;
